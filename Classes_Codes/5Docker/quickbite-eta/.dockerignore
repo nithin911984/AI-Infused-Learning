@@ -1,0 +1,11 @@
+#  is a text file placed in your project root folder that tells Docker which files and 
+# directories to ignore when building an image.
+__pycache__/
+*.pyc
+venv/
+.venv/
+.git/
+.env
+*.ipynb
+eta_model.pkl
+data/raw/

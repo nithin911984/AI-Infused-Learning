@@ -1,0 +1,29 @@
+services:
+  agent:
+    build: ./agent
+    container_name: deskbuddy-agent
+    ports:
+      - "9000:9000"
+    env_file: .env
+    environment:
+      - TOOLS_URL=http://tools:8000
+      - REDIS_HOST=deskbuddy-redis
+    depends_on: [tools, redis]
+    restart: unless-stopped
+
+  tools:
+    build: ./tools
+    container_name: deskbuddy-tools
+    expose: - "7000"
+    restart: unless-stopped
+    # NOTE: no ports! Explained below - this is the security gem
+
+  redis:
+    image: redis:7-alpine
+    container_name: deskbuddy-redis
+    volumes:
+      - agent_memory:/data
+    restart: unless-stopped
+
+volumes:
+  agent_memory:
