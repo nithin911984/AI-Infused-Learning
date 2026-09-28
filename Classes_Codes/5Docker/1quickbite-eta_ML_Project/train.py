@@ -9,7 +9,7 @@ df = pd.DataFrame({
     "rider_available": np.random.randint(0, 2, n),
     "is_raining": np.random.randint(0, 2, n),
 })
-# ETA = base + distance*3 + prep + rain penalty + rider penalty + noise
+# ETA = base + distance*3 + prep*0.7 + rain penalty*9(0 for 0 and 9 for 1) + rider penalty(6 for1 & 0 for 0) + noise
 df["eta_min"] = (8 + df.distance_km*3 + df.prep_time_min*0.7
                  + df.is_raining*9 + (1-df.rider_available)*6
                  + np.random.normal(0, 2, n))

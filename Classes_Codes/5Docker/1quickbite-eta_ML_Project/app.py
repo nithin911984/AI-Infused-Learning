@@ -11,7 +11,7 @@ class Order(BaseModel):
     rider_available: int
     is_raining: int
 
-@app.get("/")
+@app.get("/")# root or home page of our API 
 def health():
     return {"status": "QuickBite ETA is live 🛵"}
 
