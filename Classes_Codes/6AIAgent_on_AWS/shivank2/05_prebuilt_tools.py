@@ -12,12 +12,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from strands import Agent
 from strands.models.bedrock import BedrockModel
-from strands_tools import calculator
+from strands.vended_tools import shell
 from config import MODEL_ID
 
 agent = Agent(
     model=BedrockModel(model_id=MODEL_ID),
-    tools=[calculator],
+    tools=[shell],
     system_prompt="You are a helpful math assistant.",
 )
 

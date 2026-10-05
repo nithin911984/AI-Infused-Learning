@@ -19,12 +19,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from strands import Agent
 from strands.models.bedrock import BedrockModel
-from strands_tools import http_request, calculator, file_write
+from strands.vended_tools import file_editor, http_request, web_fetch, shell
 from config import MODEL_ID
 
 agent = Agent(
     model=BedrockModel(model_id=MODEL_ID),
-    tools=[http_request, calculator, file_write],
+    tools=[http_request, shell, file_editor,web_fetch],
     system_prompt="You help with data analysis tasks.",
 )
 

@@ -46,3 +46,4 @@ response = agent("Pull last quarter's sales data and email a summary to the team
 # RULE OF THUMB: build focused, single-purpose tools.
 # One mega-tool that does everything is harder to maintain, harder for the
 # agent to reason about, and impossible to reuse elsewhere.
+agent("what is Q3 revenue? send the report to nitmax.iaf@gmail.com")

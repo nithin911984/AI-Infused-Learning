@@ -63,7 +63,7 @@ agent = Agent(
     tools=[inventory.check_stock, inventory.update_stock],
 )
 
-agent("Check stock for PROD-123")
+agent("Check stock for PROD-4563")
 agent("Update PROD-456 stock to 25 units, then confirm the new level")
 
 # Note the second request: the agent UPDATES then RE-CHECKS, and the change
