@@ -119,9 +119,8 @@ if __name__ == "__main__":
             "What should I pack, and does it fit my budget?"
         )
 
-    print(f"\nQuestion: {question}\n" + "-" * 60)
+    print(f"\nQuestion: {question}\n" + "-" * 130)
     response = agent(question)
-    print(response)
 
 
 # ---------------------------------------------------------------------------
